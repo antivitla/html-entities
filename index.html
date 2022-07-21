@@ -1,14 +1,6 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <!-- Global site tag (gtag.js) - Google Analytics -->
-  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-48337655-1"></script>
-  <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
-    gtag('js', new Date());
-    gtag('config', 'UA-48337655-1');
-  </script>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>HTML Entities</title>
@@ -50,6 +42,14 @@
       display: block;
     }
   </style>
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-GK7YBXYWYF"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-GK7YBXYWYF');
+  </script>
 </head>
 <body>
 
@@ -75,7 +75,7 @@
       });
       const template = document.createElement('template');
 
-      // Сортировка и сборка дубликатов
+      // Сборка опциональных записей html
       entitiesList = Object.values(entitiesList.reduce((map, entity) => {
         if (!map[entity.unicode]) {
           map[entity.unicode] = entity;
@@ -85,6 +85,8 @@
         }
         return map;
       }, {}));
+
+      // Сортировка
       entitiesList = entitiesList.sort((a, b) => {
         if (a.codepoints[0] > b.codepoints[0]) {
           return 1;
